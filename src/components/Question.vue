@@ -39,7 +39,7 @@ export default {
         .doc(docId)
         .delete()
         .then(() => this.$emit("updateQuestions"))
-        .catch(err => console.log(err));
+        .catch(err => console.log(err)); // eslint-disable-line
     },
     edit() {
       this.addAnswer = !this.addAnswer;
@@ -54,7 +54,7 @@ export default {
           this.$emit("updateQuestions");
           this.addAnswer = false;
         })
-        .catch(err => console.log(err));
+        .catch(err => console.log(err)); // eslint-disable-line
     }
   },
   created() {

@@ -48,6 +48,8 @@ input {
   margin: 10px 0;
   width: 20%;
   padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 0.5rem;
 }
 button {
   margin-top: 20px;
