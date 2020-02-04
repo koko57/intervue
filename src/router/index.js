@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import SignUp from "../views/SignUp.vue";
+import AddNew from "../views/AddNew";
 import { auth } from "../config/firebase";
 
 Vue.use(VueRouter);
@@ -26,6 +27,14 @@ const routes = [
       requiresAuth: true
     }
   },
+  {
+    path: "/add-new",
+    name: "Add New",
+    component: AddNew,
+    meta: {
+      requiresAuth: true
+    }
+  }
 ];
 
 const router = new VueRouter({
