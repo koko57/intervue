@@ -11,20 +11,21 @@
       title="Delete question"
       v-on:click="updateQuestions(question.id)"
     >
-      x
+      <x-icon size="16" />
     </button>
     <button
       class="button button__edit"
       title="Add/edit answer"
       v-on:click="edit"
     >
-      edit
+      <edit-icon size="16" />
     </button>
   </div>
 </template>
 
 <script>
 import { db } from "@/config/firebase";
+import { EditIcon, XIcon } from "vue-feather-icons";
 export default {
   name: "QuestionList",
   data() {
@@ -32,6 +33,10 @@ export default {
       addAnswer: false,
       answer: ""
     };
+  },
+  components: {
+    EditIcon,
+    XIcon,
   },
   methods: {
     updateQuestions(docId) {
@@ -85,6 +90,7 @@ export default {
 }
 .button {
   position: absolute;
+  border: none;
   right: 1rem;
   transition: 0.2s ease;
   &__delete {
