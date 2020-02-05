@@ -2,7 +2,7 @@
   <layout v-bind:showNavbar="true">
     <template>
       <h3>Add new question</h3>
-      <input
+      <form-input
         aria-label="Question"
         type="text"
         v-model="question"
@@ -27,9 +27,11 @@
 <script>
 import { db } from "../config/firebase";
 import BaseLayout from "../components/BaseLayout";
+import FormInput from "../components/FormInput";
 export default {
   name: "add-new",
   components: {
+    FormInput,
     layout: BaseLayout
   },
   data() {

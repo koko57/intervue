@@ -2,8 +2,18 @@
   <layout>
     <template>
       <h3>Log In</h3>
-      <input type="text" aria-label="email" v-model="email" placeholder="Email" />
-      <input type="password" aria-label="password" v-model="password" placeholder="Password" />
+      <form-input
+        type="text"
+        aria-label="email"
+        v-model="email"
+        placeholder="Email"
+      />
+      <form-input
+        type="password"
+        aria-label="password"
+        v-model="password"
+        placeholder="Password"
+      />
       <button @click="login">Log In</button>
       <p>
         You don't have an account ? You can create one
@@ -16,6 +26,7 @@
 <script>
 import { auth } from "@/config/firebase";
 import BaseLayout from "@/components/BaseLayout";
+import FormInput from "../components/FormInput";
 
 export default {
   name: "login",
@@ -26,6 +37,7 @@ export default {
     };
   },
   components: {
+    FormInput,
     layout: BaseLayout
   },
   methods: {
@@ -44,14 +56,6 @@ export default {
 </script>
 
 <style scoped>
-input {
-  margin: 10px 0;
-  width: 90%;
-  max-width: 500px;
-  padding: 15px;
-  border: 1px solid #eee;
-  border-radius: 0.5rem;
-}
 button {
   margin-top: 20px;
   width: 10%;
