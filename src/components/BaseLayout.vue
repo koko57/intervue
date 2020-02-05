@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <navbar />
+    <navbar v-if="showNavbar" />
     <div class="main-wrapper">
-      <slot name="main" />
+      <slot />
     </div>
   </div>
 </template>
@@ -13,18 +13,25 @@ export default {
   name: "BaseLayout",
   components: {
     navbar: Navbar
+  },
+  props: {
+    showNavbar: Boolean
   }
 };
 </script>
 
 <style lang="scss">
 .container {
-  width: 90%;
-  max-width: 800px;
-  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
 }
 .main-wrapper {
-  margin-top: 90px;
+  width: 90%;
+  max-width: 800px;
+  margin: 90px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 button {
   appearance: none;

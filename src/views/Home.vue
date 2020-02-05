@@ -1,6 +1,6 @@
 <template>
-  <layout>
-    <template v-slot:main>
+  <layout v-bind:showNavbar="true">
+    <template>
       <question-list />
     </template>
   </layout>
@@ -15,6 +15,6 @@ export default {
   components: {
     "question-list": QuestionList,
     layout: BaseLayout
-  },
+  }
 };
 </script>

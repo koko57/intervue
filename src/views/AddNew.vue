@@ -1,6 +1,6 @@
 <template>
-  <layout>
-    <template v-slot:main>
+  <layout v-bind:showNavbar="true">
+    <template>
       <h3>Add new question</h3>
       <input
         aria-label="Question"
@@ -63,7 +63,7 @@ textarea {
 }
 button {
   margin-top: 20px;
-  width: 10%;
+  min-width: 100px;
   cursor: pointer;
 }
 </style>

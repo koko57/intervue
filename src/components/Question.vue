@@ -80,6 +80,7 @@ export default {
   border-radius: 1rem;
   &--question {
     font-weight: bold;
+    width: 90%;
   }
 }
 .button {

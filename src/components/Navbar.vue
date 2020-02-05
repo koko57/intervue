@@ -21,15 +21,18 @@ export default {
 <style lang="scss" scoped>
 .navbar {
   position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   width: 100%;
+  background: white;
   a {
     display: inline-block;
     font-weight: bold;
     color: #2c3e50;
     text-decoration: none;
     padding: 1rem;
+    cursor: pointer;
 
     &.router-link-exact-active {
       color: #42b983;
