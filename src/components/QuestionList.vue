@@ -43,6 +43,7 @@ export default {
   methods: {
     getCollection() {
       db.collection("questions")
+        .orderBy("createdAt")
         .get()
         .then(querySnapshot => {
           const questions = [];
@@ -76,6 +77,9 @@ export default {
 .wrapper {
   width: 100%;
 }
+.input {
+  width: 100%;
+}
 .input-wrapper {
   position: relative;
   width: 100%;
@@ -86,7 +90,7 @@ export default {
 }
 .icon {
   position: absolute;
-  top: 1rem;
+  top: 1.5rem;
   right: 1.5rem;
 }
 </style>
