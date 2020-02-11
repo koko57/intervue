@@ -38,6 +38,8 @@ export default {
 <style scoped lang="scss">
 .select-wrapper {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   &__inner {
     position: relative;
   }

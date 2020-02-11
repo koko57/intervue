@@ -142,10 +142,15 @@ export default {
     display: flex;
     &__main {
       justify-content: space-between;
+      @media screen and (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+      }
     }
     &__title {
       padding: 1rem;
       cursor: pointer;
+      min-width: 130px;
       &:hover .icon__x {
         color: #cd6183;
       }
