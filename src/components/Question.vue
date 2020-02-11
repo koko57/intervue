@@ -36,15 +36,21 @@ import { EditIcon, XIcon } from "vue-feather-icons";
 
 export default {
   name: "QuestionList",
+  components: {
+    EditIcon,
+    XIcon
+  },
   data() {
     return {
       addAnswer: false,
       answer: ""
     };
   },
-  components: {
-    EditIcon,
-    XIcon
+  props: {
+    question: Object
+  },
+  created() {
+    this.answer = this.$props.question.answer;
   },
   methods: {
     updateQuestions(docId) {
@@ -69,38 +75,34 @@ export default {
         })
         .catch(err => console.log(err)); // eslint-disable-line
     }
-  },
-  created() {
-    this.answer = this.$props.question.answer;
-  },
-  props: {
-    question: Object
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "../styles/variables";
+@import "../styles/mixins";
+
 .list-item {
   min-height: 80px;
   margin: 0.5rem 0;
-  display: flex;
-  flex-direction: column;
+  padding: 1rem;
   position: relative;
   text-align: left;
-  padding: 1rem;
-  border: 1px solid #eee;
-  border-radius: 1rem;
+  @include flex-column;
+  @include border;
+
   &--question {
     font-weight: bold;
     width: 90%;
     margin-bottom: 0.5rem;
   }
   &--level {
-    font-size: 0.8rem;
     width: 100%;
     margin: -0.25rem 0 0.5rem;
-    color: #777777;
+    font-size: 0.8rem;
+    color: $color-grey-dark;
     span {
       margin-right: 0.35rem;
     }
@@ -114,13 +116,13 @@ export default {
   &__delete {
     top: 0.5rem;
     &:hover {
-      color: #cd6183;
+      color: $color-pink;
     }
   }
   &__edit {
     bottom: 0.5rem;
     &:hover {
-      color: #42b983;
+      color: $color-green-light;
     }
   }
 }
@@ -133,9 +135,8 @@ export default {
 }
 textarea {
   padding: 1rem;
-  border: 1px solid #eee;
-  border-radius: 0.5rem;
-  flex: 1;
   margin-right: 1.5rem;
+  flex: 1;
+  @include border;
 }
 </style>

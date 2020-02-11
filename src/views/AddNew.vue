@@ -1,7 +1,7 @@
 <template>
   <layout v-bind:showNavbar="true">
     <template>
-      <h3>Add new question</h3>
+      <h3>Add a new question</h3>
       <form-input
         aria-label="Question"
         type="text"
@@ -65,17 +65,18 @@ export default {
 };
 </script>
 
-<style scoped>
-input,
+<style lang="scss" scoped>
+@import "../styles/variables";
+@import "../styles/mixins";
+
 textarea {
   margin: 10px auto;
   width: 90%;
   padding: 1rem;
-  border: 1px solid #eee;
-  border-radius: 0.5rem;
+  @include border;
 }
 .error {
-  color: #cd6183;
+  color: $color-pink;
   font-size: 0.9rem;
 }
 button {

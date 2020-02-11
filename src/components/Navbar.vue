@@ -19,6 +19,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import "../styles/variables";
+
 .navbar {
   position: fixed;
   z-index: 100;
@@ -28,14 +30,14 @@ export default {
   background: white;
   a {
     display: inline-block;
-    font-weight: bold;
-    color: #2c3e50;
-    text-decoration: none;
     padding: 1rem;
+    color: $color-green-dark;
+    font-weight: bold;
+    text-decoration: none;
     cursor: pointer;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: $color-green-light;
       pointer-events: none;
     }
   }
