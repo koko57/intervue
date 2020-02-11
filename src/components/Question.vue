@@ -4,9 +4,9 @@
       {{ question.question }}
     </div>
     <div class="list-item--level" v-if="question.level || question.category">
-      <span>{{ question.level }}</span>
+      <span v-if="question.level">{{ question.level }}</span>
       <span v-if="question.level && question.category">|</span>
-      <span>{{ question.category }}</span>
+      <span v-if="question.category">{{ question.category }}</span>
     </div>
     <div>{{ question.answer }}</div>
     <div v-if="addAnswer" class="textarea-wrapper">
@@ -100,7 +100,7 @@ export default {
   }
   &--level {
     width: 100%;
-    margin: -0.25rem 0 0.5rem;
+    margin: 0 0 0.5rem;
     font-size: 0.8rem;
     color: $color-grey-dark;
     span {
