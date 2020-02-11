@@ -2,7 +2,7 @@
   <div class="select-wrapper">
     <div class="select-wrapper__inner">
       <select v-model="value.level" aria-label="level">
-        <option disabled value="">Level</option>
+        <option value="">Level</option>
         <option>Junior</option>
         <option>Mid</option>
         <option>Senior</option>
@@ -11,7 +11,7 @@
     </div>
     <div class="select-wrapper__inner">
       <select v-model="value.category" aria-label="category">
-        <option disabled value="">Category</option>
+        <option value="">Category</option>
         <option>JavaScript</option>
         <option>CSS</option>
         <option>HTML</option>
