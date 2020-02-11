@@ -14,30 +14,22 @@
         v-model="answer"
         placeholder="Answer (can be added/edited later)"
       />
-      <!--      <select v-model="level">-->
-      <!--        <option disabled value="">Please select one</option>-->
-      <!--        <option>Mid</option>-->
-      <!--        <option>Senior</option>-->
-      <!--      </select>-->
-      <!--      <select v-model="category">-->
-      <!--        <option disabled value="">Please select one</option>-->
-      <!--        <option>JavaScript</option>-->
-      <!--        <option>CSS</option>-->
-      <!--        <option>HTML</option>-->
-      <!--        <option>General</option>-->
-      <!--      </select>-->
+      <filter-select v-model="filters" />
       <button v-on:click="validateAndSubmit">Add</button>
     </template>
   </layout>
 </template>
 
 <script>
-import { db, auth } from "../config/firebase";
-import BaseLayout from "../components/BaseLayout";
-import FormInput from "../components/FormInput";
+import { db, auth } from "@/config/firebase";
+import BaseLayout from "@/components/BaseLayout";
+import FormInput from "@/components/FormInput";
+import FilterSelect from "@/components/FilterSelect";
+
 export default {
   name: "add-new",
   components: {
+    FilterSelect,
     FormInput,
     layout: BaseLayout
   },
@@ -45,8 +37,7 @@ export default {
     return {
       question: "",
       answer: "",
-      level: "",
-      category: "",
+      filters: { level: "", category: "" },
       error: false
     };
   },
@@ -57,7 +48,8 @@ export default {
           question: this.question,
           answer: this.answer,
           createdAt: new Date(),
-          createdBy: auth.currentUser.email.split("@")[0]
+          createdBy: auth.currentUser.email.split("@")[0],
+          ...this.filters
         })
         .then(() => this.$router.push("/"));
     },
@@ -78,7 +70,7 @@ input,
 textarea {
   margin: 10px auto;
   width: 90%;
-  padding: 15px;
+  padding: 1rem;
   border: 1px solid #eee;
   border-radius: 0.5rem;
 }

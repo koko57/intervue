@@ -1,6 +1,13 @@
 <template>
   <div class="list-item">
-    <div class="list-item--question">{{ question.question }}</div>
+    <div class="list-item--question">
+      {{ question.question }}
+    </div>
+    <div class="list-item--level" v-if="question.level || question.category">
+      <span>{{ question.level }}</span>
+      <span v-if="question.level && question.category">|</span>
+      <span>{{ question.category }}</span>
+    </div>
     <div>{{ question.answer }}</div>
     <div v-if="addAnswer" class="textarea-wrapper">
       <textarea aria-label="answer" v-model="answer" />
@@ -26,6 +33,7 @@
 <script>
 import { db } from "@/config/firebase";
 import { EditIcon, XIcon } from "vue-feather-icons";
+
 export default {
   name: "QuestionList",
   data() {
@@ -36,7 +44,7 @@ export default {
   },
   components: {
     EditIcon,
-    XIcon,
+    XIcon
   },
   methods: {
     updateQuestions(docId) {
@@ -86,6 +94,16 @@ export default {
   &--question {
     font-weight: bold;
     width: 90%;
+    margin-bottom: 0.5rem;
+  }
+  &--level {
+    font-size: 0.8rem;
+    width: 100%;
+    margin: -0.25rem 0 0.5rem;
+    color: #777777;
+    span {
+      margin-right: 0.35rem;
+    }
   }
 }
 .button {
@@ -96,13 +114,13 @@ export default {
   &__delete {
     top: 0.5rem;
     &:hover {
-      border-color: #cd6183;
+      color: #cd6183;
     }
   }
   &__edit {
     bottom: 0.5rem;
     &:hover {
-      border-color: #42b983;
+      color: #42b983;
     }
   }
 }
@@ -114,7 +132,7 @@ export default {
   align-items: flex-end;
 }
 textarea {
-  padding: 15px;
+  padding: 1rem;
   border: 1px solid #eee;
   border-radius: 0.5rem;
   flex: 1;

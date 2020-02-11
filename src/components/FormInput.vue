@@ -16,7 +16,7 @@ export default {
 input {
   margin: 10px auto;
   width: 90%;
-  padding: 15px;
+  padding: 1rem;
   border: 1px solid #eee;
   border-radius: 0.5rem;
 }
