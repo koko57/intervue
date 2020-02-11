@@ -5,6 +5,7 @@
     <a v-on:click="logout">Log out</a>
   </div>
 </template>
+
 <script>
 import { auth } from "@/config/firebase";
 export default {
@@ -18,6 +19,7 @@ export default {
   }
 };
 </script>
+
 <style lang="scss" scoped>
 @import "../styles/variables";
 

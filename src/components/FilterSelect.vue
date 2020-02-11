@@ -24,6 +24,7 @@
 
 <script>
 import { ChevronDownIcon } from "vue-feather-icons";
+
 export default {
   name: "FilterSelect",
   components: {
