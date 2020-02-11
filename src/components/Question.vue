@@ -35,7 +35,7 @@ import { db } from "@/config/firebase";
 import { EditIcon, XIcon } from "vue-feather-icons";
 
 export default {
-  name: "QuestionList",
+  name: "Question",
   components: {
     EditIcon,
     XIcon
@@ -79,7 +79,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../styles/variables";
 @import "../styles/mixins";

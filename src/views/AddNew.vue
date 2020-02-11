@@ -1,5 +1,5 @@
 <template>
-  <layout v-bind:showNavbar="true">
+  <base-layout v-bind:showNavbar="true">
     <template>
       <h3>Add a new question</h3>
       <form-input
@@ -17,7 +17,7 @@
       <filter-select v-model="filters" />
       <button v-on:click="validateAndSubmit">Add</button>
     </template>
-  </layout>
+  </base-layout>
 </template>
 
 <script>
@@ -27,11 +27,11 @@ import FormInput from "@/components/FormInput";
 import FilterSelect from "@/components/FilterSelect";
 
 export default {
-  name: "add-new",
+  name: "AddNew",
   components: {
     FilterSelect,
     FormInput,
-    layout: BaseLayout
+    BaseLayout
   },
   data() {
     return {

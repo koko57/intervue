@@ -34,6 +34,7 @@
 
 <script>
 import FormInput from "./FormInput";
+
 export default {
   name: "AuthForm",
   components: {

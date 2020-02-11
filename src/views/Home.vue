@@ -1,9 +1,9 @@
 <template>
-  <layout v-bind:showNavbar="true">
+  <base-layout v-bind:showNavbar="true">
     <template>
       <question-list />
     </template>
-  </layout>
+  </base-layout>
 </template>
 
 <script>
@@ -11,10 +11,10 @@ import QuestionList from "@/components/QuestionList.vue";
 import BaseLayout from "@/components/BaseLayout";
 
 export default {
-  name: "home",
+  name: "Home",
   components: {
-    "question-list": QuestionList,
-    layout: BaseLayout
+    QuestionList,
+    BaseLayout
   }
 };
 </script>
