@@ -15,6 +15,10 @@ import AuthForm from "@/components/AuthForm";
 
 export default {
   name: "login",
+  components: {
+    AuthForm,
+    BaseLayout
+  },
   data() {
     return {
       form: {
@@ -25,10 +29,6 @@ export default {
       },
       errorMessage: ""
     };
-  },
-  components: {
-    AuthForm,
-    BaseLayout
   },
   methods: {
     login(data) {

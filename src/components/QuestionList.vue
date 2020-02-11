@@ -79,6 +79,9 @@ export default {
       addFilters: false
     };
   },
+  created() {
+    this.getCollection();
+  },
   methods: {
     getCollection() {
       db.collection("questions")
@@ -128,14 +131,13 @@ export default {
       }
       return questions;
     }
-  },
-  created() {
-    this.getCollection();
   }
 };
 </script>
 
 <style scoped lang="scss">
+@import "../styles/variables";
+
 .wrapper {
   width: 100%;
   &--filter {
@@ -152,7 +154,7 @@ export default {
       cursor: pointer;
       min-width: 130px;
       &:hover .icon__x {
-        color: #cd6183;
+        color: $color-pink;
       }
     }
   }

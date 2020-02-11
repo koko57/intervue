@@ -12,12 +12,14 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../styles/variables";
+@import "../styles/mixins";
+
 input {
   margin: 10px auto;
   width: 90%;
   padding: 1rem;
-  border: 1px solid #eee;
-  border-radius: 0.5rem;
+  @include border;
 }
 </style>

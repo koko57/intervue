@@ -21,6 +21,9 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../styles/variables";
+@import "../styles/mixins";
+
 .container {
   width: 100%;
   min-height: 100vh;
@@ -29,18 +32,15 @@ export default {
   width: 90%;
   max-width: 800px;
   margin: 90px auto 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-column($center: true);
 }
 button {
   appearance: none;
   padding: 0.25rem 0.5rem;
-  border: 1px solid #eee;
-  border-radius: 0.5rem;
   cursor: pointer;
+  @include border;
   &:hover {
-    border-color: #777;
+    border-color: $color-grey-dark;
   }
 }
 </style>

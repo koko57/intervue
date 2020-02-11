@@ -51,6 +51,10 @@ export default {
       }
     };
   },
+  props: {
+    errorMessage: String,
+    form: Object
+  },
   methods: {
     submit() {
       const valid = this.validate();
@@ -90,15 +94,13 @@ export default {
       this.errors.password = "";
       this.errors.confirmPassword = "";
     }
-  },
-  props: {
-    errorMessage: String,
-    form: Object
   }
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../styles/variables";
+
 form {
   width: 100%;
 }
@@ -118,7 +120,7 @@ p a {
 }
 span {
   display: block;
-  color: #cd6183;
+  color: $color-pink;
   font-size: 0.9rem;
 }
 </style>

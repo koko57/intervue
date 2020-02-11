@@ -36,6 +36,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "../styles/variables";
+@import "../styles/mixins";
+
 .select-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -55,8 +58,7 @@ select {
   padding: 1rem;
   margin: 1rem;
   background: none;
-  border: 1px solid #eee;
-  border-radius: 0.5rem;
   display: inline-block;
+  @include border;
 }
 </style>
