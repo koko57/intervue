@@ -14,7 +14,7 @@ import BaseLayout from "@/components/BaseLayout";
 import AuthForm from "@/components/AuthForm";
 
 export default {
-  name: "login",
+  name: "Login",
   components: {
     AuthForm,
     BaseLayout
