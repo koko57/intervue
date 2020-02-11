@@ -10,7 +10,7 @@
       />
       <search-icon class="icon" size="16" />
     </div>
-    <ul class="list">
+    <ul v-if="filteredQuestions.length" class="list">
       <question
         v-for="q in filteredQuestions"
         v-bind:key="q.id"
@@ -18,6 +18,10 @@
         v-on:updateQuestions="getCollection"
       />
     </ul>
+    <p v-if="!filteredQuestions.length && !searchFilter" class="text">
+      Add a new question
+    </p>
+    <p v-else class="text">No results found</p>
   </div>
 </template>
 
@@ -92,5 +96,8 @@ export default {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
+}
+.text {
+  margin: 2rem auto;
 }
 </style>
