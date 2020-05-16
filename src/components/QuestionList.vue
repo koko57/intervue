@@ -47,7 +47,7 @@
     </ul>
     <div v-if="!filteredQuestions.length">
       <p v-if="!searchFilter && !addFilters" class="text">
-        Add a new question
+        No questions found. Add a new question.
       </p>
       <p v-else class="text">No results found</p>
     </div>

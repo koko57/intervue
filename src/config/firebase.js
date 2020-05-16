@@ -6,7 +6,8 @@ const config = {
   databaseURL: process.env.VUE_APP_DB_URL,
   projectId: process.env.VUE_APP_PROJECT_ID,
   storageBucket: process.env.VUE_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.VUE_APP_SENDER_ID
+  messagingSenderId: process.env.VUE_APP_SENDER_ID,
+  appId: process.env.VUE_APP_APP_ID,
 };
 
 firebase.initializeApp(config);
